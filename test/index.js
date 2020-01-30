@@ -24,7 +24,7 @@ describe ( 'CSS Flatten', it => {
 
   it ( 'throws on invalid "&" usage', t => {
 
-    t.throws ( () => flatten ( 'b & {\n}\n' ), /top-level/i );
+    t.throws ( () => flatten ( 'b & {}' ), /top-level/i );
 
   });
 

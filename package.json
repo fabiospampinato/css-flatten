@@ -46,7 +46,7 @@
     "fast"
   ],
   "dependencies": {
-    "css-simple-parser": "^1.0.0"
+    "css-simple-parser": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^13.5.1",

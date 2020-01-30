@@ -2,7 +2,7 @@
 
 Flattens a nested (S)CSS string, `&` placeholders are supported too.
 
-This is implemented using [css-simple-parser](https://github.com/fabiospampinato/css-simple-parser), which makes it tiny and blazing fast, but also it makes it quite strict about what it can parse, read the parser's readme to learn about these limitations.
+This is implemented using [css-simple-parser](https://github.com/fabiospampinato/css-simple-parser), which makes it tiny and blazing fast, but there are some limitations to be aware of, read the parser's readme to learn about them.
 
 ## Install
 
