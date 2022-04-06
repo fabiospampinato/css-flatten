@@ -1,12 +1,12 @@
 
 /* IMPORT */
 
-import {describe} from 'ava-spec';
 import minify from 'css-simple-minifier';
-import {default as flatten} from '../dist';
-import {INPUT, OUTPUT, INPUT_COMPLEX_AMPERSAND, OUTPUT_COMPLEX_AMPERSAND} from './fixtures';
+import {describe} from 'fava';
+import flatten from '../dist/index.js';
+import {INPUT, OUTPUT, INPUT_COMPLEX_AMPERSAND, OUTPUT_COMPLEX_AMPERSAND} from './fixtures.js';
 
-/* CSS FLATTEN */
+/* MAIN */
 
 describe ( 'CSS Flatten', it => {
 

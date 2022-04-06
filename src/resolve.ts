@@ -1,5 +1,5 @@
 
-/* RESOLVE */
+/* MAIN */
 
 const Resolve = {
 

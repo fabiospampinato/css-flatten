@@ -2,12 +2,12 @@
 /* IMPORT */
 
 import Parser from 'css-simple-parser';
-import {NODE} from 'css-simple-parser/dist/types';
+import type {NODE} from 'css-simple-parser/src/types';
 import Resolve from './resolve';
 
-/* CSS FLATTEN */
+/* MAIN */
 
-function flatten ( css: string ): string {
+const flatten = ( css: string ): string => {
 
   /* PARSING */
 
@@ -15,25 +15,27 @@ function flatten ( css: string ): string {
 
   /* RESOLVING SELECTORS */
 
+  const selectorsCache = new Map<NODE, string[]> ();
+
   Parser.traverse ( AST, node => {
 
     const {selector, parent} = node;
 
     let selectors = selector.trim ().split ( /\s*,\s*/g ); // Splitting and cleaning up
 
-    if ( !parent['selector'] ) { // Top-level node
+    if ( 'selector' in parent ) { // Regular node
 
-      if ( selector.indexOf ( '&' ) >= 0 ) throw new Error ( 'Top-level ampersand placeholders are invalid' );
-
-    } else {
-
-      selectors = Resolve.selectors ( selectors, parent['selectors'] );
+      selectors = Resolve.selectors ( selectors, selectorsCache.get ( parent ) || [] );
 
       node.selector = selectors.join ( ',' );
 
+    } else { // Top-level node
+
+      if ( selector.indexOf ( '&' ) >= 0 ) throw new Error ( 'Top-level ampersand placeholders are invalid' );
+
     }
 
-    node['selectors'] = selectors;
+    selectorsCache.set ( node, selectors );
 
   });
 
@@ -53,7 +55,7 @@ function flatten ( css: string ): string {
 
   /* WIDOWING */
 
-  const empty = [];
+  const empty: never[] = [];
 
   for ( let i = 0, l = nodes.length; i < l; i++ ) {
 
@@ -65,7 +67,7 @@ function flatten ( css: string ): string {
 
   return Parser.stringify ( AST );
 
-}
+};
 
 /* EXPORT */
 

@@ -1,11 +1,11 @@
 
 /* IMPORT */
 
-const {default: flatten} = require ( '../dist' ),
-      {INPUT} = require ( '../test/fixtures' ),
-      benchmark = require ( 'benchloop' );
+import benchmark from 'benchloop';
+import flatten from '../dist/index.js';
+import {INPUT} from '../test/fixtures.js';
 
-/* BENCHMARK */
+/* MAIN */
 
 benchmark.defaultOptions = Object.assign ( benchmark.defaultOptions, {
   iterations: 1000,
