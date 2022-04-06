@@ -2,7 +2,7 @@
   "name": "css-flatten",
   "repository": "github:fabiospampinato/css-flatten",
   "description": "Flattens a nested (S)CSS string, '&' placeholders are supported too.",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "type": "module",
   "main": "dist/index.js",
   "exports": "./dist/index.js",
