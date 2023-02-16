@@ -8,8 +8,7 @@ import {INPUT} from '../test/fixtures.js';
 /* MAIN */
 
 benchmark.defaultOptions = Object.assign ( benchmark.defaultOptions, {
-  iterations: 1000,
-  log: 'compact'
+  iterations: 1000
 });
 
 benchmark ({
