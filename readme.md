@@ -7,13 +7,15 @@ This is implemented using [css-simple-parser](https://github.com/fabiospampinato
 ## Install
 
 ```sh
-npm install --save css-flatten
+npm install css-flatten
 ```
 
 ## Usage
 
 ```ts
 import flatten from 'css-flatten';
+
+// Let's make some CSS to flatten
 
 const css = `
 .foo {
@@ -27,7 +29,9 @@ const css = `
 }
 `;
 
-flatten ( css ); // =>
+// Let's flatten that CSS
+
+flatten ( css );
 // .foo {
 //   color: red;
 // }
