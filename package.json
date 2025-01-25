@@ -2,6 +2,7 @@
   "name": "css-flatten",
   "repository": "github:fabiospampinato/css-flatten",
   "description": "Flattens a nested (S)CSS string, '&' placeholders are supported too.",
+  "license": "MIT",
   "version": "2.0.0",
   "type": "module",
   "main": "dist/index.js",
@@ -28,13 +29,13 @@
     "fast"
   ],
   "dependencies": {
-    "css-simple-parser": "^3.0.0"
+    "css-simple-parser": "^3.0.2"
   },
   "devDependencies": {
-    "fava": "^0.2.1",
+    "fava": "^0.3.4",
     "benchloop": "^2.1.1",
-    "css-simple-minifier": "^2.0.0",
-    "tsex": "^3.0.1",
-    "typescript": "^5.1.6"
+    "css-simple-minifier": "^2.0.1",
+    "tsex": "^4.0.2",
+    "typescript": "^5.7.3"
   }
 }
