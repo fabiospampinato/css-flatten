@@ -1,8 +1,8 @@
 
 /* IMPORT */
 
+import type {NODE} from 'css-simple-parser';
 import Parser from 'css-simple-parser';
-import type {NODE} from 'css-simple-parser/src/types';
 import Resolve from './resolve';
 
 /* MAIN */
